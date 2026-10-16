@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HABIB120-X | Official Website</title>
+<meta name="description" content="Welcome to HABIB120-X — Funny POV, Entertainment and YouTube Shorts.">
+<meta name="theme-color" content="#080d1b">
+
+<style>
+*{box-sizing:border-box}
+:root{--bg:#080d1b;--panel:#121c31;--text:#f4f7ff;--muted:#aab7d0;--line:#ffffff20;--blue:#168bff}
+body.light{--bg:#f1f5ff;--panel:#fff;--text:#15213a;--muted:#586781;--line:#15213a20}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;transition:.25s}
+header{position:sticky;top:0;z-index:10;background:var(--panel);border-bottom:1px solid var(--line);padding:14px 5%;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.brand{font-weight:900;font-size:18px;letter-spacing:1px}
+button,a{font:inherit}
+button{cursor:pointer}
+.theme,.nav,.secondary{background:var(--panel);color:var(--text);border:1px solid var(--line);padding:11px 14px;border-radius:12px;font-weight:bold}
+.wrap{width:min(900px,92%);margin:auto}
+.hero{text-align:center;padding:48px 8px 35px}
+.logo{width:125px;height:125px;border-radius:50%;border:3px solid var(--blue);box-shadow:0 0 30px #168bff66;margin:auto auto 20px;display:grid;place-items:center;background:linear-gradient(135deg,#123c86,#7c3aed);font-size:42px;font-weight:900}
+h1{font-size:clamp(28px,6vw,46px);margin:12px 0}
+.gradient{background:linear-gradient(90deg,#60a5fa,#38bdf8,#c084fc);color:transparent;background-clip:text}
+p{line-height:1.7}
+.muted{color:var(--muted)}
+.action{display:inline-block;text-decoration:none;color:white;background:linear-gradient(135deg,#0759c7,#168bff);padding:13px 17px;border-radius:12px;font-weight:bold;margin:6px 3px}
+.menu{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:20px 0}
+.nav.active{background:var(--blue);color:white}
+.panel{display:none;padding:22px;background:var(--panel);border:1px solid var(--line);border-radius:20px;margin:16px 0}
+.panel.active{display:block;animation:fade .25s}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:13px}
+.card{border:1px solid var(--line);padding:17px;border-radius:15px}
+.emoji{font-size:30px}
+input{width:100%;padding:12px;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:10px;margin:8px 0}
+footer{text-align:center;padding:28px 10px;color:var(--muted);font-size:13px}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:480px){header{padding:12px 4%}.brand{font-size:14px}.panel{padding:16px}}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="brand">⚡ HABIB120-X</div>
+  <button class="theme" id="themeBtn" onclick="toggleTheme()">☀️ Light</button>
+</header>
+
+<main class="wrap">
+<section class="hero">
+  <div class="logo">H<span style="color:#60a5fa">X</span></div>
+  <p class="muted">WELCOME TO MY OFFICIAL WEBSITE</p>
+  <h1><span class="gradient">HABIB120-X</span></h1>
+  <p class="muted">Funny POV • Entertainment • YouTube Shorts<br>Stories, laughter and football vibes! ⚽</p>
+  <a class="action" href="https://www.youtube.com/@Habib120-X" target="_blank" rel="noopener">▶ Visit YouTube</a>
+  <button class="secondary" onclick="copyLink()">📋 Copy Channel Link</button>
+</section>
+
+<nav class="menu">
+  <button class="nav active" onclick="showPanel('home',this)">🏠 Home</button>
+  <button class="nav" onclick="showPanel('channel',this)">▶ Channel</button>
+  <button class="nav" onclick="showPanel('shorts',this)">🔥 Shorts</button>
+  <button class="nav" onclick="showPanel('contact',this)">✉️ Contact</button>
+  <button class="nav" onclick="showPanel('about',this)">ℹ️ About</button>
+</nav>
+
+<section class="panel active" id="home">
+  <h2>🏠 Welcome!</h2>
+  <p class="muted">Welcome to the official HABIB120-X website. Explore my content and join the community!</p>
+  <div class="cards">
+    <div class="card"><div class="emoji">😂</div><h3>Funny POV</h3><p class="muted">Relatable moments and funny situations.</p></div>
+    <div class="card"><div class="emoji">⚽</div><h3>Football Vibes</h3><p class="muted">Football passion and legendary moments.</p></div>
+    <div class="card"><div class="emoji">🎬</div><h3>YouTube Shorts</h3><p class="muted">Short entertainment made for you.</p></div>
+  </div>
+</section>
+
+<section class="panel" id="channel">
+  <h2>▶ My YouTube Channel</h2>
+  <p class="muted">Find my latest uploads on YouTube.</p>
+  <input id="channelLink" value="https://www.youtube.com/@Habib120-X" readonly>
+  <button class="action" onclick="copyLink()">Copy Link</button>
+  <a class="action" href="https://www.youtube.com/@Habib120-X" target="_blank" rel="noopener">Open Channel ↗</a>
+  <p class="muted">Subscriber counts are not connected to this website.</p>
+</section>
+
+<section class="panel" id="shorts">
+  <h2>🔥 My Shorts</h2>
+  <p class="muted">Watch videos on the official channel.</p>
+  <a class="action" href="https://www.youtube.com/@Habib120-X/shorts" target="_blank" rel="noopener">▶ Watch Shorts</a>
+</section>
+
+<section class="panel" id="contact">
+  <h2>✉️ Contact</h2>
+  <p class="muted">For channel-related messages, visit my YouTube channel.</p>
+  <a class="action" href="https://www.youtube.com/@Habib120-X" target="_blank" rel="noopener">Contact via YouTube ↗</a>
+</section>
+
+<section class="panel" id="about">
+  <h2>ℹ️ About This Website</h2>
+  <div class="card">
+    <p><b>Website:</b> HABIB120-X</p>
+    <p><b>Category:</b> Entertainment</p>
+    <p><b>Content:</b> Funny POV & Shorts</p>
+    <p><b>Theme:</b> Dark / Light</p>
+    <p><b>Version:</b> 2.0</p>
+  </div>
+</section>
+</main>
+
+<footer>© <span id="year"></span> HABIB120-X · Made with 💙</footer>
+
+<script>
+function showPanel(id,btn){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+function toggleTheme(){
+  document.body.classList.toggle('light');
+  document.getElementById('themeBtn').textContent=
+    document.body.classList.contains('light')?'🌙 Dark':'☀️ Light';
+}
+async function copyLink(){
+  const link='https://www.youtube.com/@Habib120-X';
+  try{
+    await navigator.clipboard.writeText(link);
+    alert('Channel link copied!');
+  }catch(e){
+    prompt('Copy this link:',link);
+  }
+}
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
+
